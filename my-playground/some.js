@@ -4,12 +4,11 @@ console.log('p');
 const age = 100;
 console.log(p, age);
 
-SNOB'N'US
-String
-Number
-Boolean
-null
-undefined
-Symbol
-
-Object
+// SNOB'N'US
+// String
+// Number
+// Boolean
+// null
+// undefined
+// Symbol
+// Object
