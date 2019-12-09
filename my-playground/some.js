@@ -12,3 +12,5 @@ console.log(p, age);
 // undefined
 // Symbol
 // Object
+
+const name = 'jon';
