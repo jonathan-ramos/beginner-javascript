@@ -56,4 +56,3 @@ async function fetchDadJoke() {
   console.log(joke);
   return joke;
 }
-//** I have now ammended this file. This is a test */
