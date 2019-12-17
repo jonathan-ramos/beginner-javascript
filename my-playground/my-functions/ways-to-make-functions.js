@@ -90,7 +90,7 @@ const inchesToCM = inches => inches * 2.54;
 // const makeABaby = (first, last) => { name: `${first} ${last}`, age: `0` };
 
 // Step 4 : Add a parenthesis to contian the object block
-const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: `0` });
+// const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: `0` });
 
 // Step 5: the arrow function version of makeABaby is not better than the regular function. The regular function is more readable. 
 
@@ -98,3 +98,72 @@ const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: `0` });
 // IIFE
 // Immediately Invoked Function Expression
 
+
+
+// function makeABaby(firstname, lastname) {
+//     const baby = {
+//         name: `${firstname} ${lastname}`,
+//         age: 0
+//     }
+//     return baby;
+// }
+
+
+// Convert this into an arrow function
+// Step 1:  Stick this into a variable;
+// const makeABaby = function(firstname, lastname) {
+//     const baby = {
+//         name: `${firstname} ${lastname}`,
+//         age: 0
+//     }
+//     return baby;
+// }
+// Step 2: Replace function keyword with an arrow
+// const makeABaby = (firstname, lastname) => {
+//     const baby = {
+//         name: `${firstname} ${lastname}`,
+//         age: 0
+//     }
+//     return baby;
+// }
+// Step 3: Retun the object properties directly by removing the objectname inside the function
+// Step 4: Put it all in one line.
+// const makeABaby = (firstname, lastname) => { return { name: `${firstname} ${lastname}`, age: 0 } }
+// Step 5: Turn it into an implicit return by removing the Brackets before the return keyword. Note if you are implicit returning an object, you will need to wrap it in a parenthesis.
+const makeABaby = (firstname, lastname) => ({ name: `${firstname} ${lastname}`, age: 0 });
+
+
+//IIFE 
+//Immediately Invoked Function Expression
+(function(){
+    console.log(`Running an anonymous function`);
+    return `You are cool`;
+})();
+
+//Methods!!!!
+//Simply a function that lives inside an object
+
+const wes = {
+    name: 'Wes Bos',
+    // Method
+    sayHi: function(){
+        console.log('Hey Wes');
+        return 'Hey Wes'
+    },
+    // Short hand method
+    // instead of yellHi: function(){}
+    yellHi() {
+        return 'HEEEEEY WEEEEESSSSS!!!'
+    },
+    // Arrow function
+    wisperHi: () => {
+        return 'hiiii weessss...shhhhh';
+    }
+}
+
+// Callback function
+// A regular function. It is something happens when something is done.
+
+const button = document.querySelector('.clickMe');
+
+button.addEventListener('click', wes);

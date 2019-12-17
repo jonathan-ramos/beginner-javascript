@@ -1,6 +1,5 @@
-@ -1,115 +0,0 @@
 /* eslint-disable */
-
+/* SNOBUSN -> String, Numbers, Object, Boolean, Undefined, Symbol, Null */
 /* ********** */
 /* 01.STRINGS */
 /* ********** */
@@ -59,18 +58,22 @@ console.log(`each kid gets ${eachKidGets}, dad gets ${dadGets}`);
 /* ********** */
 /* 03.OBJECTS */
 /* ********** */
-
+/* Objects are building blocks, its a collection or groups of data(or properties and values) & functions */
 const person = {
     first: 'jon',
     last: 'jones',
     age: 100
 };
 
+// TO access the properties, use the dot
+person.first;
+person.last;
+person.age;
 // TYPES MEMEORY HOOK 'SNOBUSN' => STRING, NUMBERS, OBJECT, BOOLEAN, UNDEFINED, SYMBOL, NULL
 
 
 /* ********************* */
-/* 04.NULL AND UNDEFINED */
+/* 04.NULL AND 05 UNDEFINED */
 /* ********************* */
 
 // UNDEFINED => variable that has been created but does not have any value.
@@ -99,12 +102,17 @@ teller.last = null;
 
 var some_item = null;
 console.log(`some item = "${some_item}"`);
+/* ******************* */
+/* 06. SYMBOLS         */
+/* ******************* */
+/* Symbols are a way to define unique properties or identifiers in javascript */
+
 
 /* ******************* */
-/* BOOLEANS            */
+/* 07. BOOLEANS        */
 /* ******************* */
 let isDrawing = false;
-let age = 18;
+// let age = 18;
 const ofAge = age > 19;
 console.log(age);
 console.log(ofAge);
