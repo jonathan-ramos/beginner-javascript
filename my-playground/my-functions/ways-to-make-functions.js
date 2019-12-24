@@ -143,27 +143,61 @@ const makeABaby = (firstname, lastname) => ({ name: `${firstname} ${lastname}`, 
 //Methods!!!!
 //Simply a function that lives inside an object
 
+// const wes = {
+//     name: 'Wes Bos',
+//     // Method
+//     sayHi: function(){
+//         console.log('Hey Wes');
+//         return 'Hey Wes'
+//     },
+//     // Short hand method
+//     // instead of yellHi: function(){}
+//     yellHi() {
+//         return 'HEEEEEY WEEEEESSSSS!!!'
+//     },
+//     // Arrow function
+//     wisperHi: () => {
+//         return 'hiiii weessss...shhhhh';
+//     }
+// }
+
+// Methods!!!!
+// Function that lives inside an object;
+
 const wes = {
     name: 'Wes Bos',
-    // Method
-    sayHi: function(){
-        console.log('Hey Wes');
-        return 'Hey Wes'
+    sayHi: function() {
+        console.log(`hi!`);
+        return 'Hey Wes';
     },
-    // Short hand method
-    // instead of yellHi: function(){}
     yellHi() {
-        return 'HEEEEEY WEEEEESSSSS!!!'
+        console.log(`HEEEEEEYYYYYY WEEEEESSSSSSS!!!!`);
     },
-    // Arrow function
-    wisperHi: () => {
-        return 'hiiii weessss...shhhhh';
-    }
+    wisperHi: () => `hiiii...sshhhh...`
 }
 
-// Callback function
-// A regular function. It is something happens when something is done.
-
+// Callback functions
+// Something that will happen when something is done.
+// A function that is passed into another function and called at a later time.
+// click callback
 const button = document.querySelector('.clickMe');
 
-button.addEventListener('click', wes);
+// button.addEventListener('click', wes.yellHi);
+
+// function handleClick() {
+//     console.log(`Great Clicking!!!`);
+// }
+
+// button.addEventListener('click', handleClick);
+
+button.addEventListener('click', function(){
+    console.log(`Nice Job!!!`);
+});
+
+// Timer callback
+// first argument is the function to call to run after a certain amount of time, second is the duration in ms
+setTimeout(function() {
+    console.log(`Done! Time to eat`);
+}, 1000);
+
+setTimeout(wes.yellHi, 2000);
