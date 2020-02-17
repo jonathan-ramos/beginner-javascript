@@ -5,14 +5,13 @@ const people = [
 ];
 
 people.forEach((person, index) => {
-  console.group(`${person.name}`);
-  console.log(person.country);
-  console.log(person.cool);
-  console.log('Done');
-  console.groupEnd(`${person.name}`);
+    // if (person.name == 'Wes') {
+    //     console.log(`Dumb name @ [${index}] index`);
+    // }
+    console.log(person.name);
 });
+// console.table(people);
 
-console.table(people);
 // Console Methods
 
 // Callstack
@@ -38,8 +37,8 @@ function doALotOfStuff() {
 }
 
 function doctorize(name) {
-    console.count(`running doctorize ${name}`);
-  return `Dr. ${name}`;
+    console.count(`running doctorize for ${name}`);
+    return `Dr. ${name}`;
 }
 
 function greet(name) {
