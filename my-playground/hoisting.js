@@ -21,6 +21,6 @@ function add(a, b) {
 }
 
 // NOTE THAT THIS IS A FUNCTION STUCK IN A VARIABLE AND WILL NOT BE HOISTED, SAME WITH ARROW FUNCTIONS. ONLY WORKS WITH REGULAR FUNCTIONS. NOT REALLY TOO USEFUL.
-const add = function (a, b) {
-    return a + b;
-}
+// const add = function (a, b) {
+//     return a + b;
+// }
