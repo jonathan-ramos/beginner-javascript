@@ -2,7 +2,7 @@
 // 1. .createElement();
 // 2. .appendChild();
 // 3. .insertAdjacentElement(position, elementToAdd); | better than appendchild
-// 4. .cloneNode(true)
+// 4. .cloneNode(true) ** This will clone any element, including attributes and child elements.
 
 console.log('Creating JS!');
 
@@ -59,9 +59,14 @@ myDiv.insertAdjacentElement('beforeend', list);
 
 const li6 = li5.cloneNode(true);
 list.insertAdjacentElement('beforeend', li6);
+
 const footer = document.createElement('footer');
 const footerNote = document.createElement('h1');
 footerNote.textContent = `I've added a footer`;
 footerNote.classList.add('footer');
 footer.insertAdjacentElement('beforeend', footerNote);
 document.body.insertAdjacentElement('beforeend', footer);
+
+const myDiv2 = myDiv.cloneNode('true');
+document.body.insertAdjacentElement('beforeend', myDiv2);
+myDiv2.classList.add('wrapper-2');
