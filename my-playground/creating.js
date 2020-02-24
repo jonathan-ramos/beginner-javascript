@@ -55,7 +55,13 @@ list.insertAdjacentElement('afterbegin', li2);
 list.insertAdjacentElement('beforeend', li5);
 li2.insertAdjacentElement('beforebegin', li1);
 
-document.body.insertAdjacentElement('afterbegin', list);
+myDiv.insertAdjacentElement('beforeend', list);
 
 const li6 = li5.cloneNode(true);
 list.insertAdjacentElement('beforeend', li6);
+const footer = document.createElement('footer');
+const footerNote = document.createElement('h1');
+footerNote.textContent = `I've added a footer`;
+footerNote.classList.add('footer');
+footer.insertAdjacentElement('beforeend', footerNote);
+document.body.insertAdjacentElement('beforeend', footer);
