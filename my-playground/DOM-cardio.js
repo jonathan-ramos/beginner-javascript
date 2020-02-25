@@ -38,7 +38,7 @@ wrapper.insertAdjacentElement('afterbegin', img);
 // with HTML string, make a div, with two paragraphs inside of it
 // put this div before the unordered list from above
 const content = `
-    <div>
+    <div class="myDiv">
         <p>I am jon</p>
         <p>I <em>love</em> making <strong>websites!</strong></p>
     </div>
@@ -50,6 +50,10 @@ ul.insertAdjacentHTML('beforebegin', content);
 // ul.insertAdjacentElement('beforebegin', myFragment);
 
 // add a class to the second paragraph called warning
+const myDiv = document.querySelector('.myDiv');
+console.log(myDiv);
+myDiv.lastElementChild.classList.add('warning');
+myDiv.firstElementChild.remove();
 // remove the first paragraph
 
 // create a function called generatePlayerCard that takes in three arguments: name, age, and height
