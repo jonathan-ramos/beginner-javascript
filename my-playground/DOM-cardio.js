@@ -19,7 +19,7 @@ li3.textContent = 'three';
 ul.insertAdjacentElement('afterbegin', li1);
 li1.insertAdjacentElement('afterend', li2);
 ul.insertAdjacentElement('beforeend', li3);
-document.body.appendChild(ul);
+div.insertAdjacentElement('beforeend', ul);
 
 // create an image
 // set the source to an image
@@ -33,10 +33,21 @@ img.width = 200;
 img.classList.add('cute');
 img.alt = 'Cute Puppy';
 const wrapper = document.querySelector('.wrapper');
-wrapper.appendChild(img);
+wrapper.insertAdjacentElement('afterbegin', img);
 
 // with HTML string, make a div, with two paragraphs inside of it
 // put this div before the unordered list from above
+const content = `
+    <div>
+        <p>I am jon</p>
+        <p>I <em>love</em> making <strong>websites!</strong></p>
+    </div>
+`;
+
+console.log(ul);
+ul.insertAdjacentHTML('beforebegin', content);
+// document.body.appendChild(myFragment);
+// ul.insertAdjacentElement('beforebegin', myFragment);
 
 // add a class to the second paragraph called warning
 // remove the first paragraph
