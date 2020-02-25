@@ -1,7 +1,7 @@
 console.log('Crating with strings!');
 
 // SUMMARY:
-// 1. Create strings using BACKTICKS `{var}`;
+// 1. Create strings using BACKTICKS `<div><p>sample html ${variable}</p></div>`;
 // 2. HTML tags created using backticks are treated as strings. It will need to be added to the Dom before you can access it as html elements.
 // 3. console.log(typeof myHTML) will result in string.
 // 4. you can add the string to the page with .innerHTML, insertAdjacentElement, etc.
@@ -19,6 +19,15 @@ const myHTML = `
     <img src='${src}' alt="${desc}"/>
     </div>
 `;
+
+const myHTML2 = `
+    <div class="wrapper">
+        <h2>Very very ${desc} pup</h2>
+        <img src="${src}" alt="${desc}" />
+    </div>
+`;
+
+item.innerHTML = myHTML2;
 
 // // THIS WILL BE UNDEFINED, UNTIL IT HAS BEEN ADDED TO THE DOM
 // console.log(myHTML.classList);
