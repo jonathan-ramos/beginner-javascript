@@ -47,30 +47,48 @@ console.log(innerDiv.lastElementChild);
 innerDiv.lastElementChild.classList.add('warning');
 
 // create a function called generatePlayerCard that takes in three arguments: name, age, and height
-function generatePlayerCard(name, age, height) {
-  const playerCard = `
-        <div class="playerCard">
-            <h2>${name} = ${age}</h2>
-            <p>They are ${height} and ${age} years old. In Dog years this person would be AGEINDOGYEARS. That would be a tall dog!</p>
-        </div>
-    `;
-}
 // have that function return html that looks like this:
 // <div class="playerCard">
 //   <h2>NAME — AGE</h2>
 //   <p>They are HEIGHT and AGE years old. In Dog years this person would be AGEINDOGYEARS. That would be a tall dog!</p>
 // </div>
 
+function generatePlayerCard(name, age, height) {
+  let playerCard = `
+        <div class="playerCard">
+            <h2>${name} = ${age}</h2>
+            <p>They are ${height} and ${age} years old. In Dog years this person would be AGEINDOGYEARS. That would be a tall dog!</p>
+            <button class="delete" type="button">Delete</button>
+        </div>
+    `;
+    return playerCard;
+}
 // make a new div with a class of cards
 const cards = document.createElement('div');
 cards.classList.add('cards');
 console.log(cards);
 // Have that function make 4 cards
+const card1 = generatePlayerCard('jon', 32, '6.4ft');
+const card2 = generatePlayerCard('mike', 28, '5.9ft');
+const card3 = generatePlayerCard('amy', 44, '5.4ft')
+const card4 = generatePlayerCard('jonny', 41, '5.11ft');
 
 // append those cards to the div
+cards.innerHTML = card1 + card2 + card3 + card4;
 // put the div into the DOM just before the wrapper element
+div.insertAdjacentElement('beforebegin', cards);
 // Bonus, put a delete Button on each card so when you click it, the whole card is removed
 
 // select all the buttons!
 // make out delete function
+function remove(event) {
+    console.log(event.currentTarget);
+    const buttonThatGotClicked = event.currentTarget;
+    buttonThatGotClicked.closest('.playerCard').remove();
+}
 // loop over them and attach a listener
+// const buttons = document.querySelector('.delete');
+// buttons.addEventListener('click', remove);
+
+const buttons = document.querySelectorAll('.delete');
+buttons.forEach(button => button.addEventListener('click', remove));
