@@ -1,3 +1,9 @@
+// SUMMARY
+// 1. insertAdjacentHTML works for nodes and inserts them as html
+// 2. event.currentTarget
+// 3. .parentElement
+// 4. .closest *** note that this is much better than parentElement selector
+
 console.log('It works! Lets start the DOM Cardio!')
 // Make a div
 const div = document.createElement('div');
@@ -58,6 +64,7 @@ function generatePlayerCard(name, age, height) {
         <div class="playerCard">
             <h2>${name} - ${age}</h2>
             <p>They are ${height} and ${age} years old. In Dog years this person would be AGEINDOGYEARS. That would be a tall dog!</p>
+            <button class="delete" type="button">delete</button>
         </div>
     `;
     return playerCard;
@@ -85,6 +92,21 @@ playerDiv.insertAdjacentHTML('afterbegin', card4);
 
 div.insertAdjacentElement('beforebegin', playerDiv);
 // append those cards to the div
+
+// Select all buttons
+const buttons = document.querySelectorAll('.delete');
+// Make delete function
+function deleteCard(event) {
+    console.log('Delete card later')
+    const buttonThatGotClicked = event.currentTarget;
+    console.log(buttonThatGotClicked);
+    // buttonThatGotClicked.parentElement.remove();
+    buttonThatGotClicked.closest('.playerCard').remove();
+}
+
+buttons.forEach(button => button.addEventListener('click', deleteCard));
+console.log(buttons)
+
 // put the div into the DOM just before the wrapper element
 // Bonus, put a delete Button on each card so when you click it, the whole card is removed
 
