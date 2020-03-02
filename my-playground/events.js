@@ -43,20 +43,20 @@ function attachHandler(param) {
   param.addEventListener('click', buyItem);
 }
 const buyButtons = document.querySelectorAll('button.buy');
-// buyButtons.forEach(function(buyButton) {
-//   buyButton.addEventListener('click', buyItem);
-// });
+buyButtons.forEach(function(buyButton) {
+  buyButton.addEventListener('click', buyItem);
+});
 
 // Using a named function in a forEach
 // Note that whenever a forEach is used, it will give a an argument of the individual element in the list. This is passed to the function as a parameter
-function attachHandler(anythingiwant) {
-  anythingiwant.addEventListener('click', buyItem);
-}
+// function attachHandler(anythingiwant) {
+//   anythingiwant.addEventListener('click', buyItem);
+// }
 
 buyButtons.forEach(attachHandler);
 
 buyButtons.forEach(button => {
   button.addEventListener('click', () => {
-    console.log('you clickedd it!!!')
+    console.log('you clickedd it!!!');
   });
 });
