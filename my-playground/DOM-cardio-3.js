@@ -81,7 +81,7 @@ div.insertAdjacentElement('beforebegin', cards);
 
 // select all the buttons!
 // make out delete function
-function remove(event) {
+function deleteCard(event) {
     console.log(event.currentTarget);
     const buttonThatGotClicked = event.currentTarget;
     buttonThatGotClicked.closest('.playerCard').remove();
@@ -91,4 +91,4 @@ function remove(event) {
 // buttons.addEventListener('click', remove);
 
 const buttons = document.querySelectorAll('.delete');
-buttons.forEach(button => button.addEventListener('click', remove));
+buttons.forEach(button => button.addEventListener('click', deleteCard));
