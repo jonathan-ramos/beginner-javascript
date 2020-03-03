@@ -1,3 +1,5 @@
+//callback function - just a regular function, that is triggered by an event.
+//binding - taking a function and listening for a specific click from an element
 console.log('Events!');
 const butts = document.querySelector('.butts');
 const cool = document.querySelector('.cool');
