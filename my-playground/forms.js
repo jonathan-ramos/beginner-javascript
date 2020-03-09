@@ -9,6 +9,14 @@
 // focus
 // blur
 
+// Accessibility Gotchas
+// buttons are used for actions that happen inside an application
+// links are used to change a page
+// You may add a 'role' of button to an element if you have to and a tabindex.
+// If that is the case, the best practice is to just wrap the element in a button.
+// in JS, you will always need to have eventlisteners to both the click and keyup for all clickable elements.
+//  if(event.type === 'click' || event.key === 'Enter') { console.log('here')});
+
 console.log('forms js works!');
 const wes = document.querySelector('.wes');
 
@@ -54,3 +62,16 @@ signupForm.name.addEventListener('keyup', logEvent);
 signupForm.name.addEventListener('keydown', logEvent);
 signupForm.name.addEventListener('focus', logEvent);
 signupForm.name.addEventListener('blur', logEvent);
+
+const photo = document.querySelector('.photo');
+console.log(photo);
+
+function handlePhotoClick(event) {
+    if(event.type === 'click' || event.key === 'Enter') {
+        console.log(event.currentTarget);
+        console.log(event.key);
+        console.log("You clicked the photo");
+    }
+}
+photo.addEventListener('click', handlePhotoClick);
+photo.addEventListener('keyup', handlePhotoClick);
