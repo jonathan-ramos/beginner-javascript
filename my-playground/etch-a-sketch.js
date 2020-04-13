@@ -17,11 +17,11 @@
 // addEventListener('keydown', function(){}) ** usually is done in a textinput for forms, but if you need sitewide, add it to the window
 
 console.log('etch-a-sketch');
-// Select the elements on the page - canvas, shake button
+// Select the elements on the page - canvas, context, shake button & some initial variables
 const canvas = document.querySelector('#etch-a-sketch');
 const ctx = canvas.getContext('2d');
 const shakeButton = document.querySelector('.shake');
-const moveDistance = 40;
+const moveDistance = 100;
 let hue = 0;
 
 // Setup canvas for drawing
@@ -65,7 +65,7 @@ function draw({ key }) {
     default:
       break;
   }
-  hue += 2;
+  hue += 12;
   ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
   ctx.lineTo(x, y);
   ctx.stroke();
