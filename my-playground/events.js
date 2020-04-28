@@ -1,5 +1,8 @@
-//callback function - just a regular function, that is triggered by an event.
-//binding - taking a function and listening for a specific click from an element
+// callback function - just a regular function, that is triggered by an event.
+// binding - taking a function and listening for a specific click from an element
+// Event listener - go get something, listen for something, do something.
+// .target is whatever element that was clicked on (it can be a span, a p or an elem inside the button);
+// .currentTarget is what is to the left of the eventlistener.
 console.log('Events!');
 const butts = document.querySelector('.butts');
 const cool = document.querySelector('.cool');

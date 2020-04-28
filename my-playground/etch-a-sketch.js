@@ -1,3 +1,4 @@
+// IMPORTANT: animation end {once}
 // addEventListner('animationend', function(){});
 // ANIMATIONEND + ONCE:TRUE ;
 // 3rd argument to addEventlistner, { once: true } , this will call then remove the eventlistener after its done.

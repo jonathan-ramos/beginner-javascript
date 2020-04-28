@@ -2,7 +2,7 @@
 // This is the first argument in a callback function
 
 // event.target (the specific item that was clicked)
-// event.currentTarget
+// event.currentTarget (the item to the left of the eventlistener or element that triggered the click)
 // event.stopPropagation();
 
 // event.target.dataset.price (or any item in the data attribute)
@@ -10,6 +10,7 @@
 // Event.target is the actual element that was clicked on (in this case, you can click on the nested strong tag).
 // Event.currentTarget is the element that triggerted the click.
 // console.count;
+// PROPAGATION = when you click on an element, it bubbles up from the inner element all the way to the window, to the browser.
 
 console.log(`Events object!`);
 

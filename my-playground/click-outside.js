@@ -1,3 +1,4 @@
+// PERFECT EXAMPLE OF TARGET AND CURRENTTARGET USE CASE
 // console.log(e.target); .target is the actual element clicked on
 // console.log(e.currentTarget); .currentTarget is the element to the left of the addEventListener
 // .currentTarget is important in order to get whatever element initiated the event.

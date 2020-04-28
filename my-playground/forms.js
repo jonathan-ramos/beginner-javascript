@@ -1,3 +1,4 @@
+//  if(event.type === 'click' || event.key === 'Enter') { console.log('here')});
 // .preventDefault();
 // window.location
 // event.currentTarget.href;
@@ -67,11 +68,11 @@ const photo = document.querySelector('.photo');
 console.log(photo);
 
 function handlePhotoClick(event) {
-    if(event.type === 'click' || event.key === 'Enter') {
-        console.log(event.currentTarget);
-        console.log(event.key);
-        console.log("You clicked the photo");
-    }
+  if (event.type === 'click' || event.key === 'Enter') {
+    console.log(event.currentTarget);
+    console.log(event.key);
+    console.log('You clicked the photo');
+  }
 }
 photo.addEventListener('click', handlePhotoClick);
 photo.addEventListener('keyup', handlePhotoClick);
