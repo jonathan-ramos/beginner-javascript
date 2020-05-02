@@ -10,8 +10,68 @@
 
 
 <body>
-  <img width="200" src="./turtle.png" alt="Turt" class="turt">
+  <style>
+    .turtle {
+      position: relative;
+      --x: 0px;
+      --y: 0px;
+      --rotate: 0;
+      --rotateY: 0;
+      transform: translateX(var(--x)) translateY(var(--y)) rotateY(var(--rotateY)) rotate(var(--rotate));
+      transition: all 0.2s ease;
+    }
+  </style>
+  <img width="200" src="./turtle.png" alt="Turt" class="turtle">
+  <script>
+    const turtle = document.querySelector('.turtle');
+    const speed = 50;
+    console.log(turtle);
+    let x = 0;
+    let y = 0;
+    let flipped = false;
+    let rotate = 0;
 
+    function handleKeyDown(event) {
+      // if its not an arrow key, we dont care
+      if (!event.key.includes('Arrow')) {
+      }
+      switch (event.key) {
+        case 'ArrowUp':
+          y -= 1;
+          rotate = -90;
+          break;
+        case 'ArrowDown':
+          y += 1;
+          rotate = 90;
+          break;
+        case 'ArrowLeft':
+          x -= 1;
+          flipped = true;
+          rotate = 0;
+          break;
+        case 'ArrowRight':
+          x += 1;
+          flipped = false;
+          rotate = 0;
+          break;
+        default:
+          console.log('That is not a valid move');
+      }
+      console.log(x, y);
+      turtle.style.background = 'red';
+      turtle.style.background = 'red';
+      turtle.setAttribute(
+        'style',
+        `
+        --rotateY: ${flipped ? '180deg' : '0'};
+        --x: ${x * speed}px;
+        --y: ${y * speed}px;
+        --rotate: ${rotate}deg;
+        `
+      );
+    }
+    window.addEventListener('keydown', handleKeyDown);
+  </script>
 </body>
 
 </html>
