@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>If Statements</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <!-- <h2>Truthy values</h2>
+  * 1
+  * -10
+  * full string
+  * a string of "0"
+  * empty array, you can check if by adding [].length
+  * empty object, you can check by adding Object.keys({}).length
+
+
+  <h2>Falsey values</h2>
+  * 0
+  * undefined variable
+  * Variable set to null
+  * a variable set to `"hello" - 10` NaN
+  * empty string -->
+  <h2>Truthy and Falsey values</h2>
+
+  <script>// function slugify(sentence, lowercase) {
+    //   let slug = sentence.replace(/\s/g, '-');
+    //   if (lowercase) {
+    //     return slug.toLowerCase();
+    //   }
+    //   return slug;
+    // }
+    console.log('It works!');
+    function slugify(text, lowercase) {
+      let slug = text.replace(/\s/g, '-');
+      if (lowercase) {
+        slug = slug.toLowerCase();
+      }
+      return slug;
+    }
+
+    // function checkname(name = 'wes') {
+    //   if ('awesome'.includes(name)) {
+    //     console.log('super cool!!!');
+    //   } else {
+    //     console.log('not cool at all 😠 ');
+    //   }
+    // }
+    // checkname();
+
+    const name = 'wes';
+    const last = 'bos';
+
+    const isAwesomeName = 'awesome'.includes(name);
+    if (isAwesomeName) {
+      console.log('SUPER COOL AWESOME NAME');
+    }
+
+    function nameIsAwesome(name) {
+      return 'awesome'.includes(name);
+    }
+    if (nameIsAwesome('wes')) {
+      console.log('COOL NAME WES');
+    }
+
+    function checkTruth(value) {
+      if (value) {
+        console.log('There is a score already');
+      } else {
+        console.log('There is no score yet');
+      }
+    }
+    const values = [
+      [],
+      {},
+      -10,
+      1,
+      0,
+      '',
+      'Full String',
+      ' ',
+      undefined,
+      NaN,
+      null,
+    ];
+
+    // values.forEach(value => {
+    //   if (value) {
+    //     console.log(value, ' is Truthy');
+    //     value = String(value);
+    //     document.body.insertAdjacentHTML('beforeend', `<p>${value} is Truthy</p>`);
+    //   } else {
+    //     console.log(value, ' is Falsey');
+    //     value = String(value);
+    //     document.body.insertAdjacentHTML('beforeend', `<p>${value} is Falsey</p>`);
+    //   }
+    // });
+
+    values.forEach(value => {
+      if (value) {
+        console.log(value, typeof value, ' is Truthy');
+      } else {
+        console.log(value, typeof value, ' is Falsey');
+      }
+    });
+    // console.clear();
+
+    const count = 2;
+
+    // let word;
+    // if (count === 1) {
+    //   word = 'item';
+    // } else {
+    //   word = 'items';
+    // }
+
+    // Ternary
+    // 1. Condition
+    // 2. What to do if true
+    // 3. What to do if false
+
+    const word = count === 1 ? 'item' : 'items';
+
+    const sentence = `You have ${count} ${word} in your cart`;
+    console.log(sentence);
+  </script>
+
+
+</body>
+
+</html>
