@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Maps</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <ul class="prizes"></ul>
+  <script>
+    // Similar to an object
+    // Difference: it stores each value pair as 'entries'
+    // It can also have direct properties intead of entries
+    // It can have keys of any type, like a number.
+    // In a map, the order is retained at all times.
+    // INTRODUCING THE FOR-OF LOOP
+    const myMap = new Map();
+    // .set()
+
+    // If you were using an object, you'd have to use a string of score
+    const prizes = new Map();
+    const score = 200;
+    prizes.set(100, 'Bear');
+    prizes.set(200, 'Duck');
+    prizes.set(300, 'Car');
+    // Some example (not working);
+    console.log(`you win a ${prizes.get(score)}`);
+    // console.log(prizes);
+    // Select that ul
+    const ul = document.querySelector('.prizes');
+    // prizes.forEach(entry => {
+    //   console.log(entry);
+    // });
+
+    // for of loop
+    // Loop over each entries in the prizes map, and create a temp variable called prize
+    for (const [points, prize] of prizes) {
+      console.log(points, prize);
+      const li = `<li>${points} - ${prize}</li>`;
+      ul.insertAdjacentHTML('beforeend', li);
+    }
+    // .has()
+    // .delete()
+
+    // USING A MAP OVER AN OBJECT
+    // 1. you need to maintain the order.
+    // 2. there is no literal. you need to create a new Map() everytime you need to use it.
+    // 3. Object literal syntax is better with arrays.
+    // 4. Object allows functions inside an object (called methods), maps do not allow it.
+    // 5. JSON cannot handle maps
+  </script>
+</body>
+
+</html>

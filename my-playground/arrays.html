@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>
+    Arrays
+  </title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <script>
+    // Curly brackets are for objects
+    // Square brackets are for arrays
+    // Array.isArray(names) to check if its a true array
+    // Arrays are not a type.
+    // Objects use the dot notation to access each property
+    // Arrays use index[0x] to access its items
+    // Arrays are 0 based. It always starts at 0.
+    // .length to get the number of items inside the array, it is not zero based. It will tell how many items are actually inside the array
+    // last item names[names.length -1]
+    // Mutable methods: .reverse()
+    // Immutable methods : .slice(), [...arrayName]
+    // .reverse()
+    // .slice()
+    // "spread" [...arrayName]
+    // .splice() mutable
+    // .slice() immutable - this will crate a new array
+    // Most cases, you will want to use slice because it does not mutate the array
+    // STILL NEED TO FINISH CHAPTER!!!!!!
+    const names = ['wes', 'kait', 'snickers'];
+    console.log(names[1]); // this will give you the second item
+    console.log(names.length);
+    console.log(names[names.length - 1]);
+
+    // Add items at the end
+    names.push('lux');
+
+    // Add items at the front
+    names.unshift('poppy');
+    console.log(names);
+
+    // Add items at the middle
+    const bikes = ['bianchi', 'miele', 'panasonic', 'miyata'];
+    const newBikes = [...bikes.slice(0, 2), 'benotto', ...bikes.slice(2)];
+
+    // Removing items from the array
+    const newBikes2 = [...newBikes.slice(0, 3), ...newBikes.slice(4)];
+    console.log(newBikes);
+    console.log(newBikes2);
+    // If you dont want to mutate the original array
+    const names2 = [...names, 'lux'];
+    console.log(names2);
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    numbers.slice(3, 2);
+    console.log(numbers);
+
+    // // mutable methods = performs mutations, and changes the original version
+    // // immutable = does not change the original, and returns a new array
+
+    // // Mutable methods - DO CHANGE THE ORIGINAL DATA
+    // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // // Note that the .reverse() also changes the original.
+    // const numbersBackwards = numbers.reverse();
+    // console.log(numbersBackwards);
+    // console.log(numbers);
+
+    // // Anytime you want to use a mutation method and not mutate the original array
+    // // we need to take a copy of the array;
+    // // Comment out the numbers.reverse() method above as this will double reverse the numbers array
+    // const numbersReversed = [...numbers].reverse();
+    // console.log(numbersReversed);
+    // console.log(numbers);
+
+    // // Immutable methods - DOES NOT CHANGE THE ORIGINAL DATA
+    // const pizza = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // const pizzaSlice = pizza.slice(2, 4);
+    // console.log(pizzaSlice);
+    // console.log(pizza);
+  </script>
+</body>
+
+</html>

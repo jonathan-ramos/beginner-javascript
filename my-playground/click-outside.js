@@ -55,10 +55,14 @@ modalOuter.addEventListener('click', function(e) {
   }
 });
 
-window.addEventListener('keydown', event => {
-  console.log(event);
-  if (event.key === 'Escape') {
-    console.log('escape key clicked');
-    closeModal();
-  }
-});
+// window.addEventListener('keydown', event => {
+//   console.log(event);
+//   if (event.key === 'Escape') {
+//     console.log('escape key clicked');
+//     closeModal();
+//   }
+// });
+
+window.addEventListener('keydown', function(e) {
+  console.log(e.key);
+})

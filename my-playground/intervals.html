@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Intervals and Timers</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <script>
+    function buzzer() {
+      console.log('EEEEENNNNGGGG');
+    }
+
+    function sayHi() {
+      console.log('HI!');
+    }
+    // setTimeout(buzzer, 1000);
+    // setInterval(buzzer, 1000);
+
+    // An immediately called setInterval function
+    function setImmediateInterval(funcToRun, ms) {
+      // right away call that function
+      funcToRun();
+      // run a regular interval
+      return setInterval(funcToRun, ms);
+    }
+
+    function destroy() {
+      document.body.insertAdjacentHTML('afterbegin', `<p>Destroyed</p>`);
+    }
+
+    function saved() {
+      document.body.innerHTML = `<p>Saved</p>`;
+    }
+    // setImmediateInterval(buzzer, 2000);
+    // setImmediateInterval(sayHi, 300);
+    // setTimeout(destroy, 5000);
+
+    // If you need to clear the timer, you will need to save the timer in a variable
+    const bombTimer = setTimeout(destroy, 2000);
+
+    const poopInterval = setInterval(function () {
+      console.log('🚀');
+      console.log('hehehehe');
+      document.body.insertAdjacentHTML('afterbegin', `<p>Destroyed</p>`);
+    }, 500);
+
+    setTimeout(function () {
+      clearInterval(poopInterval);
+    }, 4000);
+
+    window.addEventListener('click', function () {
+      console.log('You clicked! You saved the world');
+      clearInterval(bombTimer);
+      clearInterval(poopInterval);
+      saved();
+    });
+  </script>
+</body>
+
+</html>

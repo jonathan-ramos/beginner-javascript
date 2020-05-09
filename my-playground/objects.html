@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <!-- <input type="text" name="first" value="wes"> -->
+
+  <!-- <script src="https://unpkg.com/lodash"></script> -->
+  <script>
+    // Object literal
+    const age = 100;
+    const person = {
+      name: 'wes',
+      age,
+      'cool-dude': true,
+      'really cool': false,
+      '777': true,
+      dog: 'snickers',
+      clothing: {
+        shirts: 20,
+        pants: 2,
+      },
+      // Methods are just functions that live inside an object
+      sayHi(greeting = 'Hey') {
+        return `${greeting} ${this.name}`;
+      },
+      sneeze() {
+        console.log('AAAHHHH CHOOOOO', this);
+      },
+    };
+
+    person.job = 'Web Developer';
+    person.age = 50;
+    // Not really used anymore as object literal is preferred
+    // const person2 = new Object({
+    //   age: 100,
+    //   name: wes,
+    // });
+    console.log(person);
+    // console.log(person2);
+
+    // TO KEEP ALL THE PROPERTIES PERMANENT, USE OBJECT.FREEZE (MAKE IT IMMUTABLE);
+    const personFrozen = Object.freeze(person);
+    personFrozen.age = 400;
+    console.log(personFrozen);
+
+    // ACCESSING OBJECT PROPERTIES WITH DOT NOTATION.
+    // 2ND METHOD IS IF YOU NEED TO ACCESS PROPERTIES STORED IN VARIABLES.
+    console.log(person.age);
+    // console.log(person['age']);
+
+    // const propertyToCheck = prompt('What property would you like to check?');
+    // // IF YOU NEED TO ACCESS A DYNAMIC PROPERTY, OR PROPERTIES THAT ARE STORED IN VARIABLES, YOU NEED TO USE THE SQUARE BRACKETS
+    // console.log(person[propertyToCheck]);
+
+    // DOT NOTATIONS CAN GO LEVELS DEEP
+    console.log(person.clothing.pants);
+
+    const nameInput = document.querySelector('[name="first"]');
+
+    const name = nameInput ? nameInput.value : '';
+    console.log(name);
+
+    // TO DELETE A PROPERTY FROM AN OBJECT. USE THE DELETE KEYWORD <SPACE> OBJECT.PROPERTY
+    // delete person.job;
+
+    const name1 = 'wes';
+    const name2 = 'wes';
+    console.log(name1 === name2);
+
+    const person1 = {
+      first: 'wes',
+      last: 'bos',
+    };
+    const person2 = {
+      first: 'wes',
+      last: 'bos',
+    };
+    // OBJECTS WITH THE SAME CONTENTS ARE NOT EQUAL. COMPARISONS ARE DONE WITH THE REFERENCE TO THE OBJECT ISTSELF, NOT THE CONTENTS
+    console.log(person1 === person2);
+
+    // PERSON 3 IS NOT A COPY. ITS A REFERENCE TO PERSON1. ANY UPDATE TO PERSON 3 ALSO UPDATES PERSON 1. THE SAME GOES FOR ARRAYS IN THE NEXT LESSONS.
+    const person3 = person1;
+    person3.first = 'Larry';
+    console.log(person3);
+    console.log(person1);
+
+    // SPREAD - TAKE EVERY SINGLE ITEM WITHIN AN OBJECT, AND SPREAD IT INTO THE NEW OBJECT.
+    // SPREAD WILL TAKE A COPY OF THE OBJECT, NOT A REFERENCE.
+    // SPREAD OPERATOR ... CAN ONLY COPY 1 LEVEL DEEP. SUB LEVELS, WILL BE A REFERENCE AND WILL UPDATE IF YOU UPDATE THE NEW OBJECT.
+    // SPREAD CAN ALSO BE USED TO MERGE OBJECTS
+    // const person4 = new Object({ ...person1 });
+    const person4 = { ...person1 };
+    person4.last = 'Bogabond';
+    console.log(person4);
+  </script>
+</body>
+
+</html>
