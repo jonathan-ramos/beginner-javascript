@@ -17,7 +17,7 @@
     // Array.isArray(names) to check if its a true array
     // Arrays are not a type.
     // Objects use the dot notation to access each property
-    // Arrays use index[0x] to access its items
+    // Arrays use index[0] to access its items
     // Arrays are 0 based. It always starts at 0.
     // .length to get the number of items inside the array, it is not zero based. It will tell how many items are actually inside the array
     // last item names[names.length -1]
@@ -79,6 +79,59 @@
     // const pizzaSlice = pizza.slice(2, 4);
     // console.log(pizzaSlice);
     // console.log(pizza);
+    const comments = [
+      { text: 'Cool Beans', id: 123 },
+      { text: 'Love this', id: 223 },
+      { text: 'Neato', id: 323 },
+      { text: 'Good Bikes', id: 423 },
+      { text: 'Sooo good', id: 523 },
+    ];
+    console.log(newBikes2);
+    console.log(comments);
+
+    // function deleteComment(id, comments) {
+    //     // find the index of the item in the array;
+    //     const commentIndex = comments.findIndex(comment => {
+    //         comment.id === id);
+    //     return [
+    //         ...comments.slice(0, commentIndex),
+    //         ...comments.slice(commentIndex + 1)
+    //     ]
+    // };
+
+    function deleteComments(id, comments) {
+      const commentIndex = comments.findIndex(comment => comment.id === id);
+      // console.log(commentIndex);
+      return [
+        ...comments.slice(0, commentIndex),
+        ...comments.slice(commentIndex + 1),
+      ];
+    }
+
+    // make a new array without that item in it
+    // return our new array
+
+    const names = ['Kait', 'Wes', 'Beans'];
+
+        // 1. LONG METHOD
+        // const kaitIndex = names.findIndex(name => {
+        //     if (name === 'Kait') {
+        //         return true;
+        //     }
+        //     return false;
+        // });
+        // 2. SHORTER METHOD - EXPLICIT RETURN
+        // const kaitIndex = names.findIndex(name => {
+        //     return name === 'Kait';
+        // });
+        // 3. SHORTER METHOD = IMPLICIT RETURN
+        // const kaitIndex = names.findIndex(name => name === 'Kait');
+        // const newNamesWithoutKait = [
+        //     ...names.slice(0, kaitIndex),
+        //     ...names.slice(kaitIndex + 1),
+        // ];
+        // console.log(newNamesWithoutKait);
+        // console.log(names[kaitIndex]);
   </script>
 </body>
 
