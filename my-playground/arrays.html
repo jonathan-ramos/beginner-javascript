@@ -21,12 +21,12 @@
     // Arrays are 0 based. It always starts at 0.
     // .length to get the number of items inside the array, it is not zero based. It will tell how many items are actually inside the array
     // last item names[names.length -1]
-    // Mutable methods: .reverse()
-    // Immutable methods : .slice(), [...arrayName]
+    // Mutable methods:
     // .reverse()
+    // .splice() mutable
+    // Immutable methods : .slice(), [...arrayName]
     // .slice()
     // "spread" [...arrayName]
-    // .splice() mutable
     // .slice() immutable - this will crate a new array
     // Most cases, you will want to use slice because it does not mutate the array
     // STILL NEED TO FINISH CHAPTER!!!!!!
@@ -54,8 +54,9 @@
     const names2 = [...names, 'lux'];
     console.log(names2);
     const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    numbers.slice(3, 2);
+    const numbers2 = [...numbers.slice(2, 4)];
     console.log(numbers);
+    console.log(numbers2);
 
     // // mutable methods = performs mutations, and changes the original version
     // // immutable = does not change the original, and returns a new array
@@ -75,10 +76,10 @@
     // console.log(numbers);
 
     // // Immutable methods - DOES NOT CHANGE THE ORIGINAL DATA
-    // const pizza = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    // const pizzaSlice = pizza.slice(2, 4);
-    // console.log(pizzaSlice);
-    // console.log(pizza);
+    const pizza = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const pizzaSlice = pizza.slice(2, 4);
+    console.log(pizzaSlice);
+    console.log(pizza);
     const comments = [
       { text: 'Cool Beans', id: 123 },
       { text: 'Love this', id: 223 },
@@ -111,27 +112,27 @@
     // make a new array without that item in it
     // return our new array
 
-    const names = ['Kait', 'Wes', 'Beans'];
+    // const names = ['Kait', 'Wes', 'Beans'];
 
-        // 1. LONG METHOD
-        // const kaitIndex = names.findIndex(name => {
-        //     if (name === 'Kait') {
-        //         return true;
-        //     }
-        //     return false;
-        // });
-        // 2. SHORTER METHOD - EXPLICIT RETURN
-        // const kaitIndex = names.findIndex(name => {
-        //     return name === 'Kait';
-        // });
-        // 3. SHORTER METHOD = IMPLICIT RETURN
-        // const kaitIndex = names.findIndex(name => name === 'Kait');
-        // const newNamesWithoutKait = [
-        //     ...names.slice(0, kaitIndex),
-        //     ...names.slice(kaitIndex + 1),
-        // ];
-        // console.log(newNamesWithoutKait);
-        // console.log(names[kaitIndex]);
+    // 1. LONG METHOD
+    // const kaitIndex = names.findIndex(name => {
+    //     if (name === 'Kait') {
+    //         return true;
+    //     }
+    //     return false;
+    // });
+    // 2. SHORTER METHOD - EXPLICIT RETURN
+    // const kaitIndex = names.findIndex(name => {
+    //     return name === 'Kait';
+    // });
+    // 3. SHORTER METHOD = IMPLICIT RETURN
+    // const kaitIndex = names.findIndex(name => name === 'Kait');
+    // const newNamesWithoutKait = [
+    //     ...names.slice(0, kaitIndex),
+    //     ...names.slice(kaitIndex + 1),
+    // ];
+    // console.log(newNamesWithoutKait);
+    // console.log(names[kaitIndex]);
   </script>
 </body>
 
